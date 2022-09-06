@@ -1,9 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-buttons slot="start" color="light">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
+
 </ion-header>
-
 <ion-content>
-
+  <img class="icono" src="assets/icon/artboard.svg" >
+  <h2 class="titulo">Asistencia DuocUC</h2>
+  <form>
+    <ion-item lines="full">
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-item class="borders">
+        <ion-label position="floating" color="primary">Email</ion-label>
+        <ion-input type="text" required></ion-input>
+      </ion-item>
+      
+    </ion-item>
+    <ion-item lines="full">
+      <ion-icon slot="start" name="key-outline"></ion-icon>
+      <ion-item class="borders">
+        <ion-label position="floating" color="primary">Password</ion-label>
+        <ion-input type="password" required></ion-input>
+      </ion-item>
+      
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Entrar</ion-button>
+        <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>

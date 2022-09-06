@@ -1,9 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>registro-profesor</ion-title>
+    <ion-buttons slot="start" color="light">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Nombres</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Apellidos</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-list>
+        <ion-item>
+          <ion-select interface="popover" placeholder="Selecciona tu sede">
+            <ion-select-option value="apples">Maipú</ion-select-option>
+            <ion-select-option value="oranges">Melipilla</ion-select-option>
+            <ion-select-option value="bananas">Viña del mar</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Registrarme</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
