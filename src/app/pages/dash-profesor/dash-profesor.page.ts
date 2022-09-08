@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-dash-profesor',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashProfesorPage implements OnInit {
 
-  constructor() { }
+  constructor(private menuController:MenuController) { }
 
   ngOnInit() {
   }
 
+  menu(){
+    this.menuController.open('first');
+  }
 }
