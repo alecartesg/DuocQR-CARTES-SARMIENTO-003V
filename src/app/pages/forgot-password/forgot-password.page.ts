@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { MenuController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-leer-qr',
-  templateUrl: './leer-qr.page.html',
-  styleUrls: ['./leer-qr.page.scss'],
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.page.html',
+  styleUrls: ['./forgot-password.page.scss'],
 })
-export class LeerQRPage implements OnInit {
+export class ForgotPasswordPage implements OnInit {
 
   handlerMessage='';
   roleMessage='';
 
-  constructor(private alertController: AlertController,private menuController:MenuController) { }
+  constructor(private alertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -20,7 +19,7 @@ export class LeerQRPage implements OnInit {
     //método que muestra una alerta con dos opciones  de botón
     async Confirma() {
       const alert = await this.alertController.create({
-        header: 'Presione Si para confirmar',
+        header: '¿Quiere recuperar su contraseña?',
         buttons: [
           {
             text: 'No',
@@ -33,7 +32,7 @@ export class LeerQRPage implements OnInit {
             text: 'Si',
             role: 'confirm',
             handler: () => {
-              this.handlerMessage = 'Se a escaneado el QR';
+              this.handlerMessage = 'Se a enviado el link de recuperacion a su correo';
             },
           },
         ],
@@ -44,9 +43,6 @@ export class LeerQRPage implements OnInit {
       const { role } = await alert.onDidDismiss();
       this.roleMessage = `Dismissed with role: ${role}`;
     }
-
-    menu(){
-      this.menuController.open('first');
-    }
+  
 
 }

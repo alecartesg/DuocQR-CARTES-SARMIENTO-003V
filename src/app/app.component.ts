@@ -35,6 +35,11 @@ export class AppComponent {
       redirecTo: '/generar-qr'
     },
     {
+      icon: 'finger-print-outline',
+      name: 'Leer Qr',
+      redirecTo: '/leer-qr'
+    },
+    {
       icon: 'logo-flickr',
       name: 'Actualizar-Perfil',
       redirecTo: '/registro-profesor'

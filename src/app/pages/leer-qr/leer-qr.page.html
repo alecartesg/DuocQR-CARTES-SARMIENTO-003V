@@ -1,9 +1,34 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>leer-QR</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="menu()">
+        <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Escanear QR</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>¿Ingredar a esta clase?</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <icon-card>
+        <img src="assets/escanear_qr.jpg" class="ion-padding">
+      </icon-card>
+      <p class="parrafo">Programación Web 03V</p>
+      
+    </ion-card-content>
+
+      <ion-button (click)="Confirma()"  expand="full" fill="outline" shape="round">
+        Confirme
+      </ion-button>
+     
+       <p>{{ handlerMessage }}</p>
+   </ion-card>
 
 </ion-content>

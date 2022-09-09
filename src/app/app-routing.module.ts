@@ -52,7 +52,11 @@ const routes: Routes = [
   {
     path: 'asistencia-alumno',
     loadChildren: () => import('./pages/asistencia-alumno/asistencia-alumno.module').then( m => m.AsistenciaAlumnoPageModule)
+  },  {
+    path: 'forgot-password',
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
+
 ];
 
 @NgModule({
