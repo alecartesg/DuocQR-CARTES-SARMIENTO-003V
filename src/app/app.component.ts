@@ -20,14 +20,29 @@ export class AppComponent {
 
   opciones : Componente[] = [
     {
+      icon: 'ios-bonfire',
+      name: 'Inicio-D',
+      redirecTo: '/dash-profesor'
+    },
+    {
+      icon: 'ios-bonfire',
+      name: 'Inicio-E',
+      redirecTo: '/dash-estudiante'
+    },
+    {
       icon: 'log-out',
       name: 'Log-Out',
       redirecTo: '/inicio'
     },
-    {
+        {
       icon: 'accessibility-outline',
       name: 'Asistencia',
       redirecTo: '/asistencia-profesor'
+    },
+    {
+      icon: 'accessibility-outline',
+      name: 'Asistencia',
+      redirecTo: '/asistencia-alumno'
     },
     {
       icon: 'finger-print-outline',

@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class RegistroEstudiantePage implements OnInit {
 
   constructor() { }
-  usuario = {
+
+  ngOnInit() {
+  }
+
+  usuario= {
     nombre: '',
     email: '',
     password: '',
@@ -22,7 +26,6 @@ export class RegistroEstudiantePage implements OnInit {
     console.log(this.usuario);
   }
 
-  ngOnInit() {
-  }
+
 
 }
