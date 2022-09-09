@@ -13,7 +13,7 @@
     <ion-item lines="full">
       <ion-icon slot="start" name="person-outline"></ion-icon>
       <ion-item class="borders">
-        <ion-label position="floating" color="primary">Email Docente</ion-label>
+        <ion-label position="floating" color="primary">Email Alumno</ion-label>
         <ion-input type="text" required></ion-input>
       </ion-item>
       
@@ -29,7 +29,7 @@
 
     <ion-row>
       <ion-col>
-        <ion-button [routerLink]="['/dash-profesor']" type="submit" color="primary" expand="block">Entrar</ion-button>
+        <ion-button  [routerLink]="['/dash-estudiante']"  type="submit" color="primary" expand="block">Entrar</ion-button>
         <a [routerLink]="['/forgot-password']" class="small-text">Recuperar Contraseña</a>
       </ion-col>
     </ion-row>
