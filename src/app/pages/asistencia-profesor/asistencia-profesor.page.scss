@@ -1,23 +1,35 @@
 .title{
     
+  position: relative;
+  font-family: 'Rosario';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  text-align: center;
+  
+  color: #FFFFFF;
+}
+
+  .titulo{
+  
     position: relative;
     font-family: 'Rosario';
     font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 58px;
+    font-weight: 40;
+    font-size: 28px;
+    line-height: 38px;
     text-align: center;
     
-    color: #FFFFFF;
-    
-    
+    color: #111111;
+  
+  }
+  ion-content {
+      --background: linear-gradient(167.95deg, #4272ED 0%, #9FDCFF 99.98%, rgba(1, 162, 253, 0.00520833) 99.99%, rgba(0, 163, 254, 0) 100%);
     }
-    ion-content {
-        --background: linear-gradient(167.95deg, #4272ED 0%, #9FDCFF 99.98%, rgba(1, 162, 253, 0.00520833) 99.99%, rgba(0, 163, 254, 0) 100%);
-      }
-    
-    .icono{
-        padding-left: 35%;
-        width: 10rem;
-    }
+  
+  .icono{
+      padding-left: 35%;
+      width: 10rem;
+  }
 

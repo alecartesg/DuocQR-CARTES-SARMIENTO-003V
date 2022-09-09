@@ -20,13 +20,13 @@ export class AppComponent {
 
   opciones : Componente[] = [
     {
-      icon: 'ios-bonfire',
-      name: 'Inicio-D',
+      icon: 'bonfire-outline',
+      name: 'Inicio-D(Debug)',
       redirecTo: '/dash-profesor'
     },
     {
-      icon: 'ios-bonfire',
-      name: 'Inicio-E',
+      icon: 'bonfire-outline',
+      name: 'Inicio-E(Debug)',
       redirecTo: '/dash-estudiante'
     },
     {
@@ -34,26 +34,26 @@ export class AppComponent {
       name: 'Log-Out',
       redirecTo: '/inicio'
     },
-        {
-      icon: 'accessibility-outline',
-      name: 'Asistencia',
-      redirecTo: '/asistencia-profesor'
-    },
-    {
-      icon: 'accessibility-outline',
-      name: 'Asistencia',
-      redirecTo: '/asistencia-alumno'
-    },
-    {
-      icon: 'finger-print-outline',
-      name: 'Generar-Qr',
-      redirecTo: '/generar-qr'
-    },
-    {
-      icon: 'finger-print-outline',
-      name: 'Leer Qr',
-      redirecTo: '/leer-qr'
-    },
+    //     {
+    //   icon: 'accessibility-outline',
+    //   name: 'Asistencia',
+    //   redirecTo: '/asistencia-profesor'
+    // },
+    // {
+    //   icon: 'accessibility-outline',
+    //   name: 'Asistencia',
+    //   redirecTo: '/asistencia-alumno'
+    // },
+    // {
+    //   icon: 'finger-print-outline',
+    //   name: 'Generar-Qr',
+    //   redirecTo: '/generar-qr'
+    // },
+    // {
+    //   icon: 'finger-print-outline',
+    //   name: 'Leer Qr',
+    //   redirecTo: '/leer-qr'
+    // },
     {
       icon: 'logo-flickr',
       name: 'Actualizar-Perfil',
