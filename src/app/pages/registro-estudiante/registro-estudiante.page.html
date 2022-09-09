@@ -7,27 +7,34 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <form>
+  <form #registroE="ngForm" (ngSubmit)="onSubmit()">
     <ion-item lines="full">
       <ion-label position="floating">Nombres</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" [(ngModel)]="usuario.nombre" required></ion-input>
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating">Apellidos</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" [(ngModel)]="usuario.lastname"required></ion-input>
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" [(ngModel)]="usuario.email" required></ion-input>
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input type="password" [(ngModel)]="usuario.password" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select interface="popover" placeholder="Selecciona tu carrera" [(ngModel)]="usuario.carrera">
+        <ion-select-option value="apples">Analista programador</ion-select-option>
+        <ion-select-option value="oranges">Fotografía</ion-select-option>
+        <ion-select-option value="bananas">Veterinario</ion-select-option>
+      </ion-select>
     </ion-item>
     <ion-item lines="full">
       <ion-list>
         <ion-item>
-          <ion-select interface="popover" placeholder="Selecciona tu sede">
+          <ion-select interface="popover" placeholder="Selecciona tu sede" [(ngModel)]="usuario.sede">
             <ion-select-option value="apples">Maipú</ion-select-option>
             <ion-select-option value="oranges">Melipilla</ion-select-option>
             <ion-select-option value="bananas">Viña del mar</ion-select-option>
@@ -37,7 +44,7 @@
     </ion-item>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="primary" expand="block">Registrarme</ion-button>
+        <ion-button [disabled]="registroE.invalid" type="submit" color="primary" expand="block" [routerLink]="['/dash-estudiante']">Registrarme</ion-button>
       </ion-col>
     </ion-row>
   </form>
