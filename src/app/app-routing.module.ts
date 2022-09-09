@@ -60,6 +60,10 @@ const routes: Routes = [
     path: 'login-alumno',
     loadChildren: () => import('./pages/login-alumno/login-alumno.module').then( m => m.LoginAlumnoPageModule)
   },
+  {
+    path: 'inputs',
+    loadChildren: () => import('./pages/inputs/inputs.module').then( m => m.InputsPageModule)
+  },
 
 ];
 

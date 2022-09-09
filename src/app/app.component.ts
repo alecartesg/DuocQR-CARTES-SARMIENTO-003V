@@ -59,7 +59,11 @@ export class AppComponent {
       name: 'Actualizar-Perfil',
       redirecTo: '/registro-profesor'
     },
-    
+    {
+      icon: 'logo-flickr',
+      name: 'inputs(debug)',
+      redirecTo: '/inputs'
+    },
   ];
 
 }
