@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController,NavController,AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-generar-qr',
   templateUrl: './generar-qr.page.html',
   styleUrls: ['./generar-qr.page.scss'],
 })
-export class GENERARQRPage implements OnInit {
+export class GenerarQrPage implements OnInit {
 
-  constructor(private menuController:MenuController) { }
+  constructor(private menuController: MenuController) { }
 
   ngOnInit() {
   }
-
-  menu(){
+  mostrarMenu(){
     this.menuController.open('first');
   }
 }

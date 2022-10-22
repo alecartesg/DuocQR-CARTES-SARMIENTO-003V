@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { GenerarQrPageRoutingModule } from './generar-qr-routing.module';
+import { LogoutpPageRoutingModule } from './logoutp-routing.module';
 
-import { GenerarQrPage } from './generar-qr.page';
+import { LogoutpPage } from './logoutp.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GenerarQrPageRoutingModule
+    LogoutpPageRoutingModule
   ],
-  declarations: [GenerarQrPage]
+  declarations: [LogoutpPage]
 })
-export class GenerarQrPageModule {}
+export class LogoutpPageModule {}

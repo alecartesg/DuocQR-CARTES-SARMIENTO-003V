@@ -8,12 +8,13 @@ import { MenuController } from '@ionic/angular';
 })
 export class DashProfesorPage implements OnInit {
 
-  constructor(private menuController:MenuController) { }
+  constructor(private menuController: MenuController) { }
 
   ngOnInit() {
   }
 
-  menu(){
+
+  mostrarMenu(){
     this.menuController.open('first');
   }
 }

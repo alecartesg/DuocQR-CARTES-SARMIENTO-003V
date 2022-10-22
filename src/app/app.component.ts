@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { Usuario, RegistroserviceService } from 'src/app/services/registroservice.service';
 
-
-interface Componente{
-
+interface Componente1 {
   icon: string;
   name: string;
   redirecTo: string;
-
 }
 
 
@@ -16,55 +15,42 @@ interface Componente{
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor() {
+    this.componentes = [
+      
+      
+    ];
 
-  opciones : Componente[] = [
-    {
-      icon: 'bonfire-outline',
-      name: 'Inicio-D(Debug)',
-      redirecTo: '/dash-profesor'
-    },
-    {
-      icon: 'bonfire-outline',
-      name: 'Inicio-E(Debug)',
-      redirecTo: '/dash-estudiante'
-    },
-    {
-      icon: 'log-out',
-      name: 'Log-Out',
-      redirecTo: '/inicio'
-    },
-    //     {
-    //   icon: 'accessibility-outline',
-    //   name: 'Asistencia',
-    //   redirecTo: '/asistencia-profesor'
-    // },
-    // {
-    //   icon: 'accessibility-outline',
-    //   name: 'Asistencia',
-    //   redirecTo: '/asistencia-alumno'
-    // },
-    // {
-    //   icon: 'finger-print-outline',
-    //   name: 'Generar-Qr',
-    //   redirecTo: '/generar-qr'
-    // },
-    // {
-    //   icon: 'finger-print-outline',
-    //   name: 'Leer Qr',
-    //   redirecTo: '/leer-qr'
-    // },
-    {
-      icon: 'logo-flickr',
-      name: 'Actualizar-Perfil',
-      redirecTo: '/registro-profesor'
-    },
-    {
-      icon: 'logo-flickr',
-      name: 'inputs(debug)',
-      redirecTo: '/inputs'
-    },
-  ];
+    // Verifico si el usuario activo es profesor.
+    // Si lo es, agrego item al menú.
+    if (localStorage.getItem('ingresadoP') === 'true') {
+      this.componentes.push({
+        icon: 'person-outline',
+        name: 'Inicio',
+        redirecTo: '/dash-estudiante',
+      },
+      {
+        icon: 'qr-code-outline',
+        name: 'Generar QR',
+        redirecTo: '/generar-qr',
+      });
+    }
+    if (localStorage.getItem('ingresadoE') === 'true') {
+      this.componentes.push(
+      {
+        icon: 'person-outline',
+        name: 'Inicio',
+        redirecTo: '/dash-estudiante',
+      },
+      {
+        icon: 'qr-code-outline',
+        name: 'Leer QR',
+        redirecTo: '/leer-qr',
+      },
+      );
+    }
+  }
 
+
+  componentes: Componente1[];
 }
-

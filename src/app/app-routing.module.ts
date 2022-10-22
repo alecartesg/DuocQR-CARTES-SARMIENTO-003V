@@ -1,70 +1,55 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { IngresoEGuard } from './guards/ingreso-e.guard';
+import { IngresoPGuard } from './guards/ingreso-p.guard';
+import { NoIngresadoGuard } from './guards/no-ingresado.guard';
 
 const routes: Routes = [
-
-
-  {
-    path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
-  },
   {
     path: '',
-    redirectTo: 'inicio',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
+    canActivate:[NoIngresadoGuard]
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule),
+    canActivate:[NoIngresadoGuard]
+  },
+  {
+    path: 'logout',
+    loadChildren: () => import('./pages/logout/logout.module').then( m => m.LogoutPageModule),
+    canActivate: [IngresoEGuard] 
+  },
+  {
     path: 'dash-profesor',
-    loadChildren: () => import('./pages/dash-profesor/dash-profesor.module').then( m => m.DashProfesorPageModule)
+    loadChildren: () => import('./pages/dash-profesor/dash-profesor.module').then( m => m.DashProfesorPageModule),
+    canActivate: [IngresoPGuard]
   },
   {
     path: 'dash-estudiante',
-    loadChildren: () => import('./pages/dash-estudiante/dash-estudiante.module').then( m => m.DashEstudiantePageModule)
-  },
-  {
-    path: 'registro-profesor',
-    loadChildren: () => import('./pages/registro-profesor/registro-profesor.module').then( m => m.RegistroProfesorPageModule)
-  },
-  {
-    path: 'registro-estudiante',
-    loadChildren: () => import('./pages/registro-estudiante/registro-estudiante.module').then( m => m.RegistroEstudiantePageModule)
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'perfil',
-    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
-  },
-  {
-    path: 'leer-qr',
-    loadChildren: () => import('./pages/leer-qr/leer-qr.module').then( m => m.LeerQRPageModule)
+    loadChildren: () => import('./pages/dash-estudiante/dash-estudiante.module').then( m => m.DashEstudiantePageModule),
+    canActivate: [IngresoEGuard]
   },
   {
     path: 'generar-qr',
-    loadChildren: () => import('./pages/generar-qr/generar-qr.module').then( m => m.GENERARQRPageModule)
+    loadChildren: () => import('./pages/generar-qr/generar-qr.module').then( m => m.GenerarQrPageModule),
+    canActivate: [IngresoPGuard]
   },
   {
-    path: 'asistencia-profesor',
-    loadChildren: () => import('./pages/asistencia-profesor/asistencia-profesor.module').then( m => m.AsistenciaProfesorPageModule)
+    path: 'leer-qr',
+    loadChildren: () => import('./pages/leer-qr/leer-qr.module').then( m => m.LeerQRPageModule),
+    canActivate: [IngresoEGuard]
   },
   {
-    path: 'asistencia-alumno',
-    loadChildren: () => import('./pages/asistencia-alumno/asistencia-alumno.module').then( m => m.AsistenciaAlumnoPageModule)
-  },  {
-    path: 'forgot-password',
-    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    path: 'logoutp',
+    loadChildren: () => import('./pages/logoutp/logoutp.module').then( m => m.LogoutpPageModule),
+    canActivate: [IngresoPGuard]
   },
-  {
-    path: 'login-alumno',
-    loadChildren: () => import('./pages/login-alumno/login-alumno.module').then( m => m.LoginAlumnoPageModule)
-  },
-  {
-    path: 'inputs',
-    loadChildren: () => import('./pages/inputs/inputs.module').then( m => m.InputsPageModule)
-  },
-
 ];
 
 @NgModule({

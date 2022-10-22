@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { GenerarQrPage } from './generar-qr.page';
+import { LogoutpPage } from './logoutp.page';
 
-describe('GenerarQrPage', () => {
-  let component: GenerarQrPage;
-  let fixture: ComponentFixture<GenerarQrPage>;
+describe('LogoutpPage', () => {
+  let component: LogoutpPage;
+  let fixture: ComponentFixture<LogoutpPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ GenerarQrPage ],
+      declarations: [ LogoutpPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(GenerarQrPage);
+    fixture = TestBed.createComponent(LogoutpPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
