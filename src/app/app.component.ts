@@ -46,7 +46,7 @@ export class AppComponent {
       },
       {
         icon: 'log-out-outline',
-        name: 'Salir',
+        name: 'Ajustes',
         redirecTo: 'logoutp',
       });
     }
@@ -64,7 +64,7 @@ export class AppComponent {
       },      
       {
         icon: 'log-out-outline',
-        name: 'Salir',
+        name: 'Ajustes',
         redirecTo: 'logout',
       }
       );

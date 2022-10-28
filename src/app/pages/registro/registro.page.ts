@@ -19,11 +19,11 @@ export class RegistroPage implements OnInit {
               private toastController: ToastController, 
               private fb: FormBuilder) {
                 this.formularioRegistro = fb.group({ 
-                  'nombre' : new FormControl("", Validators.required),
-                  'correo' : new FormControl("", Validators.required), 
-                  'password': new FormControl("", Validators.required),
-                  'confirmaPass': new FormControl("", Validators.required),
-                  'creaRol': new FormControl("", Validators.required)
+                  'nombre' : new FormControl('', [Validators.required, Validators.minLength(2)]),
+                  'correo' : new FormControl('', [Validators.required, Validators.email]), 
+                  'password': new FormControl('', [Validators.required, Validators.minLength(6)]),
+                  'confirmaPass': new FormControl('', [Validators.required, Validators.minLength(6)]),
+                  'creaRol': new FormControl('', [Validators.required])
                 })
                }
 
@@ -40,7 +40,7 @@ export class RegistroPage implements OnInit {
       })
       await alert.present();
     }
-    else{
+    else if(form.password==form.confirmaPass){
       this.newUsuario.nomUsuario = form.nombre;
       this.newUsuario.correoUsuario = form.correo;
       this.newUsuario.passUsuario = form.password;
@@ -50,8 +50,11 @@ export class RegistroPage implements OnInit {
         this.newUsuario = <Usuario>{};
         this.showToast('Usuario Creado!');
       })
-      this.formularioRegistro.reset();
-    }//finelse
+      this.formularioRegistro.reset();}
+    //finelseif
+    else{
+      this.showToast('Contraseñas no coinciden!')
+    }
   }//finmetodo
 
   async showToast(msg){
