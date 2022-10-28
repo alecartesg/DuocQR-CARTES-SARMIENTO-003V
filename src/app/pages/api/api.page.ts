@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController, MenuController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http'
-import { MenuController,NavController,AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-api',
@@ -11,7 +11,9 @@ export class ApiPage implements OnInit {
 
   characters = []
 
-  constructor( private http : HttpClient , private menuController: MenuController) { }
+  constructor( private menuController: MenuController,
+    public alertController: AlertController,
+    private http : HttpClient ) { }
 
   ngOnInit() {
     this.http.get<any>('https://rickandmortyapi.com/api/character')
@@ -22,6 +24,6 @@ export class ApiPage implements OnInit {
   }
   mostrarMenu(){
     this.menuController.open('first');
-  }
 
+  }
 }

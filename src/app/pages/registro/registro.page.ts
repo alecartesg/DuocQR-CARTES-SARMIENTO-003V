@@ -17,7 +17,8 @@ export class RegistroPage implements OnInit {
   constructor(private alertController: AlertController, 
               private registroService: RegistroserviceService, 
               private toastController: ToastController, 
-              private fb: FormBuilder) {
+              private fb: FormBuilder) 
+              {
                 this.formularioRegistro = fb.group({ 
                   'nombre' : new FormControl('', [Validators.required, Validators.minLength(2)]),
                   'correo' : new FormControl('', [Validators.required, Validators.email]), 
