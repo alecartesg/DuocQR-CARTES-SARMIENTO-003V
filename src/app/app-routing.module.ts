@@ -53,7 +53,11 @@ const routes: Routes = [
   {
     path: 'api',
     loadChildren: () => import('./pages/api/api.module').then( m => m.ApiPageModule)
+  },  {
+    path: 'formulario2',
+    loadChildren: () => import('./pages/formulario2/formulario2.module').then( m => m.Formulario2PageModule)
   },
+
 
 ];
 
