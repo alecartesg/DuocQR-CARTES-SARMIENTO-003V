@@ -50,6 +50,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/logoutp/logoutp.module').then( m => m.LogoutpPageModule),
     canActivate: [IngresoPGuard]
   },
+  {
+    path: 'api',
+    loadChildren: () => import('./pages/api/api.module').then( m => m.ApiPageModule)
+  },
+
 ];
 
 @NgModule({

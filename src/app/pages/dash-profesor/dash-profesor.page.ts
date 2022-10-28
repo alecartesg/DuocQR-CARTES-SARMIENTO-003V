@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { AlertController, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-dash-profesor',
@@ -8,7 +8,8 @@ import { MenuController } from '@ionic/angular';
 })
 export class DashProfesorPage implements OnInit {
 
-  constructor(private menuController: MenuController) { }
+  constructor(private menuController: MenuController,
+            public alertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -17,4 +18,27 @@ export class DashProfesorPage implements OnInit {
   mostrarMenu(){
     this.menuController.open('first');
   }
+
+  // async salir(){
+  //   const alert = await this.alertController.create({
+  //     header: 'Salir',
+  //     message: '¿Seguro quieres cerrar seccion?',
+  //     buttons: [
+  //       {
+  //         text: 'No',
+  //         handler: () => {
+
+  //         }
+  //       }, {
+  //         text: 'Si',
+  //         handler: () => {
+  //           localStorage.removeItem('Ingresado');
+  //           this.navCtrl.navigateRoot('login');
+  //         }
+  //       }
+  //     ]
+  //   });
+  //   await alert.present();
+  // }
+
 }

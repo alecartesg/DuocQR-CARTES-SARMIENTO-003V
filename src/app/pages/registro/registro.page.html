@@ -15,7 +15,8 @@
 
         <ion-item>
           <ion-label position="floating">Nombre..</ion-label>
-          <ion-input type="text" formControlName="nombre"></ion-input>
+          <ion-input type="text" required
+          formControlName="nombre"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -29,12 +30,12 @@
         </ion-item>
 
         <ion-item>
-          <ion-label position="floating">Confirma Pass..</ion-label>
+          <ion-label position="floating">Confirme Password..</ion-label>
           <ion-input type="password" formControlName="confirmaPass"></ion-input>
         </ion-item>
         <ion-list>
           <ion-item>
-            <ion-select interface="popover" placeholder="Select fruit"  formControlName="creaRol">
+            <ion-select interface="popover" placeholder="Seleccione tipo usuario"  formControlName="creaRol">
               <ion-select-option value="Profesor">Profesor</ion-select-option>
               <ion-select-option value="Estudiante">Estudiante</ion-select-option>
             </ion-select>

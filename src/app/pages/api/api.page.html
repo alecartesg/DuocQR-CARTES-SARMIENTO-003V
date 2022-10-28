@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Api</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let character of characters" [routerLink]="['/personaje' + character.id]">
+      <ion-avatar slot="start">
+        <img src="{{character.image}}" alt="">
+      </ion-avatar>
+      <ion-label>{{character.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
