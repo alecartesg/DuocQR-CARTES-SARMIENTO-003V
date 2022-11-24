@@ -18,15 +18,16 @@
     
     <ion-card-content>
       <icon-card>
-        <img src="assets/escanear_qr.jpg" class="ion-padding">
+       <ion-button (click)="Escanear()" expand="block" fill="clear" shape="round">
+        Escanear código QR
+       </ion-button>
       </icon-card>
-      <p class="parrafo">Programación Web 03V</p>
       
     </ion-card-content>
 
-      <ion-button (click)="Confirma()"  expand="full" fill="outline" shape="round">
-        Confirme
-      </ion-button>
+      <ion-item>
+        <ion-label class="ion text wrap"> Resultado: {{scanResult}} </ion-label>
+      </ion-item>
      
        <p>{{ handlerMessage }}</p>
    </ion-card>

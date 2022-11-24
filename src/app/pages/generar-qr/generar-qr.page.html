@@ -13,19 +13,11 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Su código QR ha sido creado con éxito</ion-card-title>
+      <ion-card-title>Genere su código QR</ion-card-title>
     </ion-card-header>
     
     <ion-card-content>
-      <icon-card>
-        <img src="assets/qr.jpg" class="ion-padding">
-      </icon-card>
-      <p class="parrafo">Programación Web</p>
-      <p class="parrafo">Sección 03V</p>
-      <ion-card-title>No olvide proyectar este codigo</ion-card-title>
-      <ion-button [routerLink]="['/dash-profesor']" expand="block" fill="clear" shape="round">
-        Volver
-      </ion-button>
+      <qrcode [qrdata]="qrCodeString" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
     </ion-card-content>
 
     
