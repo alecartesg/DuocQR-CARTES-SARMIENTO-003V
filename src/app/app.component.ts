@@ -25,14 +25,11 @@ export class AppComponent {
       
       
     ];
-
-    // Verifico si el usuario activo es profesor.
-    // Si lo es, agrego item al menú.
     if (localStorage.getItem('ingresadoP') === 'true') {
-      this.componentes.push({
+      this.componentes =[{
         icon: 'person-outline',
         name: 'Inicio',
-        redirecTo: '/dash-estudiante',
+        redirecTo: '/dash-profesor',
       },
       {
         icon: 'qr-code-outline',
@@ -48,10 +45,10 @@ export class AppComponent {
         icon: 'log-out-outline',
         name: 'Ajustes',
         redirecTo: 'logoutp',
-      });
+      }];
     }
     if (localStorage.getItem('ingresadoE') === 'true') {
-      this.componentes.push(
+      this.componentes =[
       {
         icon: 'person-outline',
         name: 'Inicio',
@@ -67,7 +64,7 @@ export class AppComponent {
         name: 'Ajustes',
         redirecTo: 'logout',
       }
-      );
+      ];
     }
   }
 

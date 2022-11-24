@@ -15,30 +15,10 @@ export class DashProfesorPage implements OnInit {
   }
 
 
-  mostrarMenu(){
+  async mostrarMenu(){
     this.menuController.open('first');
   }
 
-  // async salir(){
-  //   const alert = await this.alertController.create({
-  //     header: 'Salir',
-  //     message: '¿Seguro quieres cerrar seccion?',
-  //     buttons: [
-  //       {
-  //         text: 'No',
-  //         handler: () => {
 
-  //         }
-  //       }, {
-  //         text: 'Si',
-  //         handler: () => {
-  //           localStorage.removeItem('Ingresado');
-  //           this.navCtrl.navigateRoot('login');
-  //         }
-  //       }
-  //     ]
-  //   });
-  //   await alert.present();
-  // }
 
 }

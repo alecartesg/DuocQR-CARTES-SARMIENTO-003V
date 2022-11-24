@@ -12,7 +12,7 @@ export class DashEstudiantePage implements OnInit {
 
   ngOnInit() {
   }
-  mostrarMenu(){
+  async mostrarMenu(){
     this.menuController.open('first');
   }
 

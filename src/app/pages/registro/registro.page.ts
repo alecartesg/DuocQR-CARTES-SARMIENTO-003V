@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, mdTransitionAnimation } from '@ionic/angular';
+import { AlertController, mdTransitionAnimation, NavController } from '@ionic/angular';
 import { RegistroserviceService, Usuario} from '../../services/registroservice.service';
 import { ToastController } from '@ionic/angular';
 import { FormControl, FormGroup, Validators, FormBuilder} from '@angular/forms';
@@ -13,8 +13,10 @@ export class RegistroPage implements OnInit {
 
   formularioRegistro : FormGroup; 
   newUsuario: Usuario = <Usuario>{};
+  usuarios: Usuario[] =[]; 
 
   constructor(private alertController: AlertController, 
+              private navController: NavController,
               private registroService: RegistroserviceService, 
               private toastController: ToastController, 
               private fb: FormBuilder) 
@@ -33,6 +35,7 @@ export class RegistroPage implements OnInit {
 
   async CrearUsuario(){
     var form = this.formularioRegistro.value; 
+    var existe = 0;
     if(this.formularioRegistro.invalid){
       const alert = await this.alertController.create({ 
         header: 'Error..',
@@ -47,28 +50,75 @@ export class RegistroPage implements OnInit {
       this.newUsuario.passUsuario = form.password;
       this.newUsuario.repassUsuario = form.confirmaPass;
       this.newUsuario.rol = form.creaRol;
-      this.registroService.addUsuario(this.newUsuario).then(dato=>{
-        this.newUsuario = <Usuario>{};
-        this.showToast('Usuario Creado!');
-      })
-      this.formularioRegistro.reset();}
-    //finelseif
+
+      this.registroService.getUsuarios().then(datos=>{ 
+        this.usuarios = datos; 
+    
+        if (!datos || datos.length==0){
+          this.registroService.addUsuario(this.newUsuario).then(dato=>{ 
+            this.newUsuario=<Usuario>{};
+            this.showToast('Usuario Creado satisfactoriamente');
+          });
+          this.formularioRegistro.reset();
+          this.navController.navigateRoot('login');
+        }else{
+        
+        for (let obj of this.usuarios){
+          if (this.newUsuario.correoUsuario == obj.correoUsuario){
+            existe = 1;
+          }
+        }//Fin del for
+      
+          if (existe == 1){
+            this.alertCorreoDuplicado();
+            this.formularioRegistro.reset();
+          }
+          else{
+            this.registroService.addUsuario(this.newUsuario).then(dato=>{ 
+              this.newUsuario=<Usuario>{};
+              this.showToast('Usuario Creado satisfactoriamente');
+            });
+            this.formularioRegistro.reset();
+            this.navController.navigateRoot('login');
+          }
+        }
+        })  
+      
+      }//finelse
     else{
-      this.showToast('Contraseñas no coinciden!')
-    }
-  }//finmetodo
-
-  async showToast(msg){
-    const toast = await this.toastController.create({ 
-      message : msg,
-      duration: 2000
-    })
-    await toast.present();
-  }
+        this.showToast('Contraseñas no coinciden!');
+      }
+      }//findelmetodo
+    
+  //finmetodo
 
 
 
 
+async showToast(msg){
+  const toast = await this.toastController.create({ 
+    message : msg,
+    duration: 2000
+  })
+  await toast.present();
+}
+async alertError(){
+  const alert = await this.alertController.create({ 
+    header: '¡Error!',
+    message: 'Debe completar todos los datos',
+    buttons: ['Aceptar']
+  })
+  await alert.present();
+}
+
+async alertCorreoDuplicado(){
+  const alert = await this.alertController.create({ 
+    header: '¡Error!',
+    message: 'El correo ingresado ya existe',
+    buttons: ['Aceptar']
+  })
+  await alert.present();
+}
 
 
 }

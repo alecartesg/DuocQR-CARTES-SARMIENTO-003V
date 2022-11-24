@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController, NavController, ToastController } from '@ionic/angular';
 import { RegistroserviceService, Usuario } from '../../services/registroservice.service';
 import { FormGroup, FormControl, Validators, FormBuilder }
   from '@angular/forms';
@@ -16,7 +16,8 @@ export class LoginPage implements OnInit {
   constructor(private alertController: AlertController,
     private navController: NavController,
     private registroService: RegistroserviceService,
-    private fb: FormBuilder) {
+    private fb: FormBuilder,
+    private toastController: ToastController) {
     this.formularioLogin = fb.group({
       'correo': new FormControl("", Validators.required),
       'password': new FormControl("", Validators.required)
@@ -34,13 +35,18 @@ export class LoginPage implements OnInit {
         if (usuario.correoUsuario === f.correo && usuario.passUsuario === f.password) {
           a = 1;
           console.log('ingresado');
+          localStorage.setItem('nombre',usuario.nomUsuario);
           if (usuario.rol === 'Estudiante') {
             localStorage.setItem('ingresadoE', 'true');
             this.navController.navigateRoot('dash-estudiante');
+            this.showToast('Bienvenid@ '+usuario.nomUsuario);
           }
           else if (usuario.rol === 'Profesor') {
             localStorage.setItem('ingresadoP', 'true');
             this.navController.navigateRoot('dash-profesor');
+            this.showToast('Bienvenid@ '+usuario.nomUsuario);
+
+       
           }
         }
       }
@@ -62,6 +68,12 @@ export class LoginPage implements OnInit {
     return;
   }
 
-
+  async showToast(msg){
+    const toast = await this.toastController.create({ 
+      message : msg,
+      duration: 2000
+    })
+    await toast.present();
+  }
 
 }
