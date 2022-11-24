@@ -17,4 +17,7 @@ import { GenerarQrPage } from './generar-qr.page';
   ],
   declarations: [GenerarQrPage]
 })
-export class GenerarQrPageModule {}
+export class GenerarQrPageModule {
+  qrCodeString= 'qr code';
+  constructor() {}
+}

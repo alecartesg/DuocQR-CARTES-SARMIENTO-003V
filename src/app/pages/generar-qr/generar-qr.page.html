@@ -16,13 +16,37 @@
       <ion-card-title>Genere su código QR</ion-card-title>
     </ion-card-header>
     
-    <ion-card-content>
-      <qrcode [qrdata]="qrCodeString" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
-    </ion-card-content>
-
+      <ion-card class="ion-text-center">
+         <ion-card-content>
     
+           <ion-item>
+             <ion-label position="fixed">Nombre: </ion-label>
+             <ion-input type="text" [(ngModel)]="usuario.nom" required></ion-input>
+           </ion-item>
+    
+           <ion-button 
+               expand="block" 
+               class="ion-margin" 
+               (click)="generaScan()">
+               Generate QR Code  
+           </ion-button>
+    
+           <qrcode 
+             [qrdata]="qrCodeString" 
+             [width]="256" 
+             [errorCorrectionLevel]="'M'">
+           </qrcode>
+         </ion-card-content>
+      </ion-card>
+    
+
+    <!-- <ion-card-content>
+      <qrcode [qrdata]="qrCodeString" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+    </ion-card-content> -->
+
    </ion-card>
 
-
-
 </ion-content>
+
+
+
