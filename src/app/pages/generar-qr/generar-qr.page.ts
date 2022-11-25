@@ -20,28 +20,26 @@ import { QRCodeModule } from 'angularx-qrcode';
   styleUrls: ['./generar-qr.page.scss'],
 })
 export class GenerarQrPage implements OnInit {
-  qrCodeString= "code"
-
-  constructor(private menuController: MenuController, ) { 
-  }
-
+  qrCodeString= "code for class";
   usuario={
-    asign:'',
-  }
+    asign:'',};
 
   fecha={
-    asign:'',
-  }
+    asign:'',};
 
-  generaScan(){
-    this.qrCodeString= this.usuario.asign;
-    this.qrCodeString= this.fecha.asign;
-  }
+
+  constructor(private menuController: MenuController,
+         public alertController: AlertController) { }
 
   ngOnInit() {
   }
   mostrarMenu(){
     this.menuController.open('first');
+  }
+
+  generaScan(){
+    this.qrCodeString= this.usuario.asign;
+    this.qrCodeString= this.fecha.asign;
   }
 }
 
