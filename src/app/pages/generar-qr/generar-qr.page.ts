@@ -20,7 +20,7 @@ import { QRCodeModule } from 'angularx-qrcode';
   styleUrls: ['./generar-qr.page.scss'],
 })
 export class GenerarQrPage implements OnInit {
-  qrCodeString= "code for class";
+  qrCodeString= "qr code";
   usuario={
     asign:'',};
 

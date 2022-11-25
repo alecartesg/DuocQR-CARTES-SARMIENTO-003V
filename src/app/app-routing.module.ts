@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: 'logout',
     loadChildren: () => import('./pages/logout/logout.module').then( m => m.LogoutPageModule),
-    canActivate: [IngresoEGuard] 
+    canActivate: [IngresoEGuard]
   },
   {
     path: 'dash-profesor',

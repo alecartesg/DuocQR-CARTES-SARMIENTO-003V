@@ -20,54 +20,39 @@ interface Componente1 {
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {
-    this.componentes = [
-      
-      
-    ];
-    if (localStorage.getItem('ingresadoP') === 'true') {
-      this.componentes =[{
+  constructor() {}
+
+    componentes: Componente1[]=[
+      {
         icon: 'person-outline',
-        name: 'Inicio',
+        name: 'Inicio (Profesor)',
         redirecTo: '/dash-profesor',
       },
       {
         icon: 'qr-code-outline',
-        name: 'Generar QR',
+        name: 'Generar QR(Profesor)',
         redirecTo: '/generar-qr',
       },
       {
         icon: 'dice-outline',
-        name: 'Api',
+        name: 'Api(Ambos)',
         redirecTo: '/api',
       },
       {
-        icon: 'log-out-outline',
-        name: 'Ajustes',
-        redirecTo: 'logoutp',
-      }];
-    }
-    if (localStorage.getItem('ingresadoE') === 'true') {
-      this.componentes =[
-      {
         icon: 'person-outline',
-        name: 'Inicio',
+        name: 'Inicio-(Estudiante)',
         redirecTo: '/dash-estudiante',
       },
       {
         icon: 'qr-code-outline',
-        name: 'Leer QR',
+        name: 'Leer QR (Estudiante)',
         redirecTo: '/leer-qr',
-      },      
+      }, 
       {
         icon: 'log-out-outline',
-        name: 'Ajustes',
-        redirecTo: 'logout',
-      }
-      ];
-    }
+        name: 'Cerrar sesión(ambos)',
+        redirecTo: 'logoutp',
+      },
+           
+    ];
   }
-
-
-  componentes: Componente1[];
-}
