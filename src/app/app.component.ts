@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Usuario, RegistroserviceService } from 'src/app/services/registroservice.service';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 
 interface Componente1 {
   icon: string;
