@@ -13,7 +13,6 @@ interface Componente1 {
   imports: [HttpClientModule]
 })
 
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -21,7 +20,7 @@ interface Componente1 {
 })
 export class AppComponent {
   constructor() {}
-
+  
     componentes: Componente1[]=[
       {
         icon: 'person-outline',
@@ -52,7 +51,6 @@ export class AppComponent {
         icon: 'log-out-outline',
         name: 'Cerrar sesión(ambos)',
         redirecTo: 'logoutp',
-      },
-           
+      },        
     ];
   }
