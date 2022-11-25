@@ -5,7 +5,7 @@
         <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>GENERAR QR</ion-title>
+    <ion-title>QR</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -20,15 +20,20 @@
          <ion-card-content>
     
            <ion-item>
-             <ion-label position="fixed">Nombre: </ion-label>
-             <ion-input type="text" [(ngModel)]="usuario.nom" required></ion-input>
+             <ion-label position="fixed">Asignatura: </ion-label>
+             <ion-input type="text" [(ngModel)]="usuario.asign" required></ion-input>
            </ion-item>
-    
+
+           <ion-item>
+            <ion-label position="fixed">Fecha: </ion-label>
+            <ion-input type="text" [(ngModel)]="fecha.asign" required></ion-input>
+          </ion-item>
+
            <ion-button 
                expand="block" 
                class="ion-margin" 
                (click)="generaScan()">
-               Generate QR Code  
+               Generate QR de la clase  
            </ion-button>
     
            <qrcode 

@@ -20,17 +20,22 @@ import { QRCodeModule } from 'angularx-qrcode';
   styleUrls: ['./generar-qr.page.scss'],
 })
 export class GenerarQrPage implements OnInit {
-  qrCodeString= "This is a secret code"
+  qrCodeString= "code"
 
   constructor(private menuController: MenuController, ) { 
   }
 
   usuario={
-    nom:'',
+    asign:'',
+  }
+
+  fecha={
+    asign:'',
   }
 
   generaScan(){
-    this.qrCodeString= this.usuario.nom;
+    this.qrCodeString= this.usuario.asign;
+    this.qrCodeString= this.fecha.asign;
   }
 
   ngOnInit() {
